@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const NEWSLETTER_URL = "https://kirklandcorner.substack.com";
+const INSTAGRAM_URL = "https://www.instagram.com/kirklandcorner";
 const CONTACT_EMAIL = "kirklandcorner00@gmail.com";
 const KOFI_URL = "https://ko-fi.com/kirklandcorner";
 
@@ -28,17 +29,42 @@ export default function Footer() {
           reward may vary from this estimate. Gas savings shown here are a
           rough regional estimate, not a guarantee.
         </p>
-        <p>
-          Made with love (and a rotisserie chicken) by{" "}
+        <p className="flex flex-wrap items-center gap-2">
+          <span>
+            Made with love (and a rotisserie chicken) by{" "}
+            <a
+              href={NEWSLETTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-kc-red hover:underline"
+            >
+              Kirkland Corner
+            </a>
+            .
+          </span>
           <a
-            href={NEWSLETTER_URL}
+            href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-kc-red hover:underline"
+            aria-label="Kirkland Corner on Instagram"
+            className="text-kc-ink/50 transition-colors hover:text-kc-red"
           >
-            Kirkland Corner
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
           </a>
-          .
         </p>
         <p className="mt-3">
           Got feedback or a suggestion?{" "}
