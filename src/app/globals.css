@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  /* Kirkland Corner brand palette — placeholder until an official style guide
+     exists. Inspired by the Kirkland Signature label (red / navy / cream). */
+  --kc-red: #c8102e;
+  --kc-red-dark: #9c0c24;
+  --kc-navy: #041e42;
+  --kc-navy-light: #0c2e5c;
+  --kc-gold: #f2a900;
+  --kc-cream: #fdf8ef;
+  --kc-ink: #1c1c1c;
+
+  --background: var(--kc-cream);
+  --foreground: var(--kc-ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-kc-red: var(--kc-red);
+  --color-kc-red-dark: var(--kc-red-dark);
+  --color-kc-navy: var(--kc-navy);
+  --color-kc-navy-light: var(--kc-navy-light);
+  --color-kc-gold: var(--kc-gold);
+  --color-kc-cream: var(--kc-cream);
+  --color-kc-ink: var(--kc-ink);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-oswald);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Impact, sans-serif;
+}
