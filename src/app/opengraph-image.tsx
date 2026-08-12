@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Kirkland Calc — Is Costco Executive Membership worth it?";
+export const alt = "Kirkland Calc: Is Costco Executive Membership worth it?";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -15,7 +15,7 @@ export default async function Image() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          background: "#041e42",
+          background: "#0a4f8c",
           color: "white",
           fontFamily: "sans-serif",
           padding: 80,
@@ -27,7 +27,7 @@ export default async function Image() {
             fontSize: 28,
             letterSpacing: 4,
             textTransform: "uppercase",
-            color: "#f2a900",
+            color: "#e8a93c",
             marginBottom: 24,
           }}
         >
@@ -54,7 +54,7 @@ export default async function Image() {
             textAlign: "center",
           }}
         >
-          Get your answer — and the exact math — in 30 seconds.
+          Get your answer, and the exact math, in 30 seconds.
         </div>
       </div>
     ),

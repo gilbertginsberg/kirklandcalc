@@ -34,14 +34,14 @@ function buildVerdict(
     if (currentMembership === "executive") {
       return {
         emoji: "✅",
-        headline: `You're in the right tier — Executive is paying for itself.`,
+        headline: `You're in the right tier. Executive is paying for itself.`,
         detail: `You're netting ${gain} more per year than the $${UPGRADE_COST} upgrade costs.`,
       };
     }
     if (currentMembership === "gold_star") {
       return {
         emoji: "🚀",
-        headline: `Upgrade to Executive — it pays for itself.`,
+        headline: `Upgrade to Executive. It pays for itself.`,
         detail: `The 2% reward would earn back ${gain} more than the $${UPGRADE_COST} upgrade costs.`,
       };
     }
@@ -56,17 +56,17 @@ function buildVerdict(
     return {
       emoji: "🤔",
       headline: `You might be overpaying for Executive.`,
-      detail: `Based on your spend, Gold Star would save you about ${gain}/year — the 2% reward isn't covering the extra $${UPGRADE_COST}.`,
+      detail: `Based on your spend, Gold Star would save you about ${gain}/year, since the 2% reward isn't covering the extra $${UPGRADE_COST}.`,
     };
   }
   if (currentMembership === "gold_star") {
     return {
       emoji: "✅",
-      headline: `Gold Star is enough for you — for now.`,
+      headline: `Gold Star is enough for you, for now.`,
       detail:
         spendToBreakeven > 0
           ? `You'd need to spend about ${shortfall} more per year for Executive to break even.`
-          : `You're right at the breakeven point — worth revisiting if your spending grows.`,
+          : `You're right at the breakeven point. Worth revisiting if your spending grows.`,
     };
   }
   return {
@@ -99,14 +99,14 @@ export default function Calculator() {
   const shareText =
     result.recommendedTier === "executive"
       ? `I just found out Executive Membership would earn me ${formatCurrency(result.netExecutiveGain)} more than it costs. Check your Costco math:`
-      : `I just found out Gold Star is the right call for me — Executive isn't worth the upgrade yet. Check your Costco math:`;
+      : `I just found out Gold Star is the right call for me. Executive isn't worth the upgrade yet. Check your Costco math:`;
 
   return (
     <div className="flex flex-col gap-6">
       <section className="rounded-2xl border border-kc-ink/10 bg-white p-5 shadow-sm sm:p-7">
         <div className="flex flex-col gap-6">
           <div>
-            <label htmlFor="monthlySpend" className="block font-display text-sm uppercase tracking-wide text-kc-navy">
+            <label htmlFor="monthlySpend" className="block font-display text-sm uppercase tracking-wide text-kc-blue">
               About how much do you spend at Costco per month? (excluding gas)
             </label>
             <div className="mt-3 flex items-center gap-4">
@@ -118,7 +118,7 @@ export default function Calculator() {
                 step={10}
                 value={monthlySpend}
                 onChange={(e) => setMonthlySpend(Number(e.target.value))}
-                className="h-2 w-full flex-1 cursor-pointer appearance-none rounded-full bg-kc-navy/15 accent-kc-red"
+                className="h-2 w-full flex-1 cursor-pointer appearance-none rounded-full bg-kc-blue/15 accent-kc-red"
               />
               <div className="relative w-28 shrink-0">
                 <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-kc-ink/50">
@@ -137,7 +137,7 @@ export default function Calculator() {
           </div>
 
           <div>
-            <span className="block font-display text-sm uppercase tracking-wide text-kc-navy">
+            <span className="block font-display text-sm uppercase tracking-wide text-kc-blue">
               Do you buy gas at Costco?
             </span>
             <div className="mt-3 flex gap-2">
@@ -147,7 +147,7 @@ export default function Calculator() {
                 className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
                   buysGas
                     ? "bg-kc-red text-white"
-                    : "bg-kc-navy/5 text-kc-ink/60 hover:bg-kc-navy/10"
+                    : "bg-kc-blue/5 text-kc-ink/60 hover:bg-kc-blue/10"
                 }`}
               >
                 Yes
@@ -158,7 +158,7 @@ export default function Calculator() {
                 className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
                   !buysGas
                     ? "bg-kc-red text-white"
-                    : "bg-kc-navy/5 text-kc-ink/60 hover:bg-kc-navy/10"
+                    : "bg-kc-blue/5 text-kc-ink/60 hover:bg-kc-blue/10"
                 }`}
               >
                 No
@@ -183,7 +183,7 @@ export default function Calculator() {
           </div>
 
           <div>
-            <span className="block font-display text-sm uppercase tracking-wide text-kc-navy">
+            <span className="block font-display text-sm uppercase tracking-wide text-kc-blue">
               Are you currently a member?
             </span>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -194,8 +194,8 @@ export default function Calculator() {
                   onClick={() => setCurrentMembership(opt.value)}
                   className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
                     currentMembership === opt.value
-                      ? "bg-kc-navy text-white"
-                      : "bg-kc-navy/5 text-kc-ink/60 hover:bg-kc-navy/10"
+                      ? "bg-kc-blue text-white"
+                      : "bg-kc-blue/5 text-kc-ink/60 hover:bg-kc-blue/10"
                   }`}
                 >
                   {opt.label}
@@ -208,7 +208,7 @@ export default function Calculator() {
 
       <section
         aria-live="polite"
-        className="rounded-2xl border-2 border-kc-navy bg-kc-navy p-5 text-white shadow-sm sm:p-7"
+        className="rounded-2xl border-2 border-kc-blue bg-kc-blue p-5 text-white shadow-sm sm:p-7"
       >
         <p className="text-3xl leading-tight sm:text-4xl">{verdict.emoji}</p>
         <h2 className="mt-2 font-display text-2xl uppercase leading-snug tracking-wide sm:text-3xl">
@@ -266,7 +266,7 @@ export default function Calculator() {
           </dl>
           {buysGas && (
             <p className="mt-3 text-xs text-white/50">
-              *Estimate only — Costco gas is typically $0.20–$0.40/gal cheaper
+              *Estimate only: Costco gas is typically $0.20 to $0.40/gal cheaper
               than the national average, but this varies by region and week.
               Gas may also be excluded or capped differently under the 2%
               Executive Reward.
@@ -275,7 +275,7 @@ export default function Calculator() {
           <p className="mt-2 text-xs text-white/50">
             Gold Star: {formatCurrency(GOLD_STAR_PRICE)}/yr · Executive:{" "}
             {formatCurrency(EXECUTIVE_PRICE)}/yr. Math assumes qualified
-            purchases only — see disclaimer below.
+            purchases only. See disclaimer below.
           </p>
         </div>
       </section>

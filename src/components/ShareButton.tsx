@@ -11,7 +11,7 @@ export default function ShareButton({ text, url }: { text: string; url: string }
         await navigator.share({ text, url });
         return;
       } catch {
-        // user cancelled or share failed — fall back to copy
+        // user cancelled or share failed, fall back to copy
       }
     }
     try {
@@ -19,7 +19,7 @@ export default function ShareButton({ text, url }: { text: string; url: string }
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // clipboard unavailable — no-op
+      // clipboard unavailable, no-op
     }
   }
 
@@ -27,7 +27,7 @@ export default function ShareButton({ text, url }: { text: string; url: string }
     <button
       type="button"
       onClick={handleShare}
-      className="inline-flex items-center gap-2 rounded-full bg-kc-navy px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-kc-navy-light"
+      className="inline-flex items-center gap-2 rounded-full bg-kc-blue px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-kc-blue-light"
     >
       {copied ? "Copied! 🎉" : "Share your result →"}
     </button>

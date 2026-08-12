@@ -1,6 +1,6 @@
 # Kirkland Calc
 
-Calculator that tells you if Costco Executive Membership is worth the upgrade — built as a lead-gen tool for the Kirkland Corner newsletter.
+Calculator that tells you if Costco Executive Membership is worth the upgrade, built as a lead-gen tool for the Kirkland Corner newsletter.
 
 **Live demo:** _TODO: add production URL once deployed (e.g. https://kirklandcalc.com)_
 
@@ -18,15 +18,15 @@ Visitors enter their monthly Costco spend, whether they buy gas there, and
 their current membership tier. The tool instantly shows whether upgrading to
 Executive pays for itself (via the 2% Executive Reward), with the math shown
 transparently. It exists as a lead-gen funnel for the
-[Kirkland Corner](https://kirklandcorner.substack.com) newsletter — every
+[Kirkland Corner](https://kirklandcorner.substack.com) newsletter. Every
 visitor who gets a result is invited to subscribe.
 
 ## Tech stack
 
-- **[Next.js](https://nextjs.org)** (App Router, TypeScript) — server-rendered for SEO, static where possible
-- **[Tailwind CSS v4](https://tailwindcss.com)** — styling
-- **`next/og`** — dynamically generated Open Graph share image (`src/app/opengraph-image.tsx`)
-- No backend / database — all calculations run client-side; email capture is handled entirely by the embedded Substack form
+- **[Next.js](https://nextjs.org)** (App Router, TypeScript): server-rendered for SEO, static where possible
+- **[Tailwind CSS v4](https://tailwindcss.com)**: styling
+- **`next/og`**: dynamically generated Open Graph share image (`src/app/opengraph-image.tsx`)
+- No backend / database. All calculations run client-side; email capture is handled entirely by the embedded Substack form
 - Deploy target: **Vercel** (or Netlify)
 
 ## Getting started
@@ -51,7 +51,7 @@ npm run build
 npm run start
 ```
 
-No environment variables or API keys are required — this is a fully static,
+No environment variables or API keys are required. This is a fully static,
 client-side calculator with a public Substack embed.
 
 ## Project structure
@@ -85,14 +85,14 @@ Costco gas (and how many gallons/month), and current membership tier.
 | | Gold Star | Executive |
 |---|---|---|
 | Annual price | $65 | $130 |
-| Reward | — | 2% back on qualified purchases, capped at $1,250/yr |
+| Reward | (none) | 2% back on qualified purchases, capped at $1,250/yr |
 
-- `UPGRADE_COST` = $130 − $65 = **$65** — the extra cost of Executive over Gold Star
+- `UPGRADE_COST` = $130 − $65 = **$65**, the extra cost of Executive over Gold Star
 - `executiveReward = min(annualSpend × 2%, $1,250)`
-- `netExecutiveGain = executiveReward − UPGRADE_COST` — positive means Executive pays for itself
-- **Breakeven spend** = `UPGRADE_COST / 2%` ≈ **$3,250/year** — the annual qualified spend at which the 2% reward alone covers the $65 upgrade
-- **Reward cap spend** ≈ **$62,500/year** — spend beyond this earns no additional reward
-- **Gas savings** are estimated separately (not counted toward the 2% reward, since gas may be excluded/capped differently) using a configurable $0.20–$0.40/gallon estimate vs. national average pricing. This is shown as a rough estimate, not a guarantee, and does not factor into the Gold Star vs. Executive recommendation — only into the "is being a member worth it at all" framing.
+- `netExecutiveGain = executiveReward − UPGRADE_COST`, positive means Executive pays for itself
+- **Breakeven spend** = `UPGRADE_COST / 2%` ≈ **$3,250/year**, the annual qualified spend at which the 2% reward alone covers the $65 upgrade
+- **Reward cap spend** ≈ **$62,500/year**, spend beyond this earns no additional reward
+- **Gas savings** are estimated separately (not counted toward the 2% reward, since gas may be excluded/capped differently) using a configurable $0.20 to $0.40/gallon estimate vs. national average pricing. This is shown as a rough estimate, not a guarantee, and does not factor into the Gold Star vs. Executive recommendation, only into the "is being a member worth it at all" framing.
 
 The verdict shown to the user is derived from `recommendedTier`
 (`netExecutiveGain > 0 ? "executive" : "gold_star"`) combined with the
@@ -103,7 +103,7 @@ See the inline comments in `src/lib/calculator.ts` for the exact formulas.
 
 ## Deployment
 
-Deployed via **Vercel** (recommended) or **Netlify** — either will auto-detect
+Deployed via **Vercel** (recommended) or **Netlify**, either will auto-detect
 the Next.js app with zero config.
 
 ```bash
@@ -127,5 +127,5 @@ MIT
 
 ## Credits
 
-Built for [Kirkland Corner](https://kirklandcorner.substack.com) — Costco
+Built for [Kirkland Corner](https://kirklandcorner.substack.com): Costco
 deals, hacks, and hot takes, straight to your inbox.

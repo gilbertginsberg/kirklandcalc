@@ -2,12 +2,12 @@ const NEWSLETTER_URL = "https://kirklandcorner.substack.com";
 
 export default function SubstackEmbed() {
   return (
-    <section className="rounded-2xl border-2 border-kc-navy bg-white p-5 shadow-sm sm:p-6">
-      <h3 className="font-display text-xl uppercase tracking-wide text-kc-navy">
+    <section className="rounded-2xl border-2 border-kc-blue bg-white p-5 shadow-sm sm:p-6">
+      <h3 className="font-display text-xl uppercase tracking-wide text-kc-blue">
         Want more Costco math like this?
       </h3>
       <p className="mt-1 text-sm text-kc-ink/70">
-        Get Kirkland Corner in your inbox — deals, hacks, and hot takes on the
+        Get Kirkland Corner in your inbox: deals, hacks, and hot takes on the
         food court hot dog debate.
       </p>
 

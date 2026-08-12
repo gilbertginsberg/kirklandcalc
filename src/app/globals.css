@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* Kirkland Corner brand palette — placeholder until an official style guide
-     exists. Inspired by the Kirkland Signature label (red / navy / cream). */
-  --kc-red: #c8102e;
-  --kc-red-dark: #9c0c24;
-  --kc-navy: #041e42;
-  --kc-navy-light: #0c2e5c;
-  --kc-gold: #f2a900;
-  --kc-cream: #fdf8ef;
+  /* Placeholder brand palette until an official style guide exists.
+     Warehouse-club red/blue, shifted a few degrees off Costco's exact hues. */
+  --kc-red: #d6202c;
+  --kc-red-dark: #a3161f;
+  --kc-blue: #0a4f8c;
+  --kc-blue-light: #1c6cb0;
+  --kc-gold: #e8a93c;
+  --kc-bg: #f7f8fa;
   --kc-ink: #1c1c1c;
 
-  --background: var(--kc-cream);
+  --background: var(--kc-bg);
   --foreground: var(--kc-ink);
 }
 
@@ -20,10 +20,10 @@
   --color-foreground: var(--foreground);
   --color-kc-red: var(--kc-red);
   --color-kc-red-dark: var(--kc-red-dark);
-  --color-kc-navy: var(--kc-navy);
-  --color-kc-navy-light: var(--kc-navy-light);
+  --color-kc-blue: var(--kc-blue);
+  --color-kc-blue-light: var(--kc-blue-light);
   --color-kc-gold: var(--kc-gold);
-  --color-kc-cream: var(--kc-cream);
+  --color-kc-bg: var(--kc-bg);
   --color-kc-ink: var(--kc-ink);
   --font-sans: var(--font-inter);
   --font-display: var(--font-oswald);

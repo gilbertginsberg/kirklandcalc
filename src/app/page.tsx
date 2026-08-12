@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "Is Costco Executive Membership worth it?",
     answer:
-      "It depends entirely on how much you spend at Costco each year. Executive costs $65 more than Gold Star and pays out 2% back (capped at $1,250/year) on qualified purchases. Once your annual qualified spend crosses about $3,250, the 2% reward covers that extra $65 — anything beyond that is money in your pocket. Below that spend level, Gold Star is the better deal.",
+      "It depends entirely on how much you spend at Costco each year. Executive costs $65 more than Gold Star and pays out 2% back (capped at $1,250/year) on qualified purchases. Once your annual qualified spend crosses about $3,250, the 2% reward covers that extra $65. Anything beyond that is money in your pocket. Below that spend level, Gold Star is the better deal.",
   },
   {
     question: "What is the Costco Executive Membership breakeven point?",
@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "Does Costco gas count toward the 2% reward?",
     answer:
-      "The Executive Reward applies to qualified Costco, Costco.com, and Costco Travel purchases — but gas and certain other purchases may be excluded or capped differently. Don't assume a blanket 2% on every dollar you spend, including at the pump.",
+      "The Executive Reward applies to qualified Costco, Costco.com, and Costco Travel purchases, but gas and certain other purchases may be excluded or capped differently. Don't assume a blanket 2% on every dollar you spend, including at the pump.",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="bg-kc-navy px-5 pb-14 pt-10 text-white sm:pb-20 sm:pt-16">
+      <section className="bg-kc-blue px-5 pb-14 pt-10 text-white sm:pb-20 sm:pt-16">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-display text-sm uppercase tracking-[0.2em] text-kc-gold">
             Kirkland Calc
@@ -54,8 +54,8 @@ export default function Home() {
             Is Costco Executive Membership worth it?
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-white/75 sm:text-lg">
-            Answer three quick questions and we&rsquo;ll tell you — with the
-            exact math — whether Gold Star or Executive is the right call for
+            Answer three quick questions and we&rsquo;ll tell you, with the
+            exact math, whether Gold Star or Executive is the right call for
             your shopping cart.
           </p>
         </div>
@@ -70,15 +70,15 @@ export default function Home() {
 
       <section className="border-t border-kc-ink/10 bg-white px-5 py-14">
         <div className="mx-auto max-w-2xl">
-          <h2 className="font-display text-2xl uppercase tracking-wide text-kc-navy">
+          <h2 className="font-display text-2xl uppercase tracking-wide text-kc-blue">
             Costco Executive vs. Gold Star, explained
           </h2>
           <div className="mt-4 space-y-4 text-kc-ink/80">
             <p>
               Costco offers two membership tiers: Gold Star ({formatCurrency(GOLD_STAR_PRICE)}/year)
               and Executive ({formatCurrency(EXECUTIVE_PRICE)}/year). Executive includes everything
-              Gold Star does, plus an annual 2% reward — officially called the
-              Executive Reward — on qualified Costco, Costco.com, and Costco
+              Gold Star does, plus an annual 2% reward (officially called the
+              Executive Reward) on qualified Costco, Costco.com, and Costco
               Travel purchases, capped at {formatCurrency(REWARD_CAP_SPEND * 0.02)} per year.
             </p>
             <p>
@@ -86,7 +86,7 @@ export default function Home() {
               question of &ldquo;is Costco Executive Membership worth it&rdquo;
               really comes down to a single number: how much you spend at
               Costco in a year. The 2% reward needs to generate at least{" "}
-              {formatCurrency(UPGRADE_COST)} to cancel out the higher membership fee — and
+              {formatCurrency(UPGRADE_COST)} to cancel out the higher membership fee, and
               since 2% of {formatCurrency(BREAKEVEN_SPEND)} is {formatCurrency(BREAKEVEN_SPEND * 0.02)}, that&rsquo;s
               the breakeven point. Spend more than that on qualified purchases
               and Executive comes out ahead; spend less, and Gold Star is the
@@ -94,10 +94,10 @@ export default function Home() {
             </p>
             <p>
               A few caveats worth keeping in mind: the reward applies to{" "}
-              <em>qualified</em> purchases only, and some categories — including
-              gas in certain cases — may be excluded or capped differently than
+              <em>qualified</em> purchases only, and some categories (including
+              gas in certain cases) may be excluded or capped differently than
               the standard 2%. It&rsquo;s also worth remembering that the
-              Executive Reward isn&rsquo;t cash in hand right away — it&rsquo;s
+              Executive Reward isn&rsquo;t cash in hand right away. It&rsquo;s
               issued once a year and typically redeemed in-warehouse or applied
               toward your next renewal. And if you shop with a household card
               or split purchases across a family, your combined spend (not just
@@ -107,12 +107,12 @@ export default function Home() {
             <p>
               The calculator above does this math for you automatically,
               factoring in your actual monthly spend, whether you buy gas at
-              Costco, and your current membership status — so you don&rsquo;t
+              Costco, and your current membership status, so you don&rsquo;t
               have to guess.
             </p>
           </div>
 
-          <h2 className="mt-10 font-display text-2xl uppercase tracking-wide text-kc-navy">
+          <h2 className="mt-10 font-display text-2xl uppercase tracking-wide text-kc-blue">
             Frequently asked questions
           </h2>
           <div className="mt-4 space-y-5">

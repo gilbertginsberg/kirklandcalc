@@ -4,15 +4,13 @@ const NEWSLETTER_URL = "https://kirklandcorner.substack.com";
 
 export default function Header() {
   return (
-    <header className="bg-kc-navy text-white">
+    <header className="bg-kc-blue text-white">
       <div className="mx-auto flex max-w-3xl items-center justify-between px-5 py-4">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex flex-col leading-tight">
           <span className="font-display text-xl uppercase tracking-wide text-white">
-            Kirkland Corner
+            Kirkland Calc
           </span>
-          <span className="hidden rounded-full bg-kc-gold px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-kc-ink sm:inline">
-            Calc
-          </span>
+          <span className="text-xs text-white/60">by Kirkland Corner</span>
         </Link>
         <a
           href={NEWSLETTER_URL}

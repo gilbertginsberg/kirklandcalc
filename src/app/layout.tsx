@@ -4,6 +4,19 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
+const MATOMO_SCRIPT = `
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://geodework.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '7']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://cdn.matomo.cloud/geodework.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+`;
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -18,7 +31,7 @@ const oswald = Oswald({
 const SITE_URL = "https://kirklandcalc.com";
 const TITLE = "Costco Membership Calculator: Is Executive Worth It?";
 const DESCRIPTION =
-  "Plug in your Costco spending and find out in seconds whether Gold Star or Executive Membership pays off — with the exact breakeven math, from Kirkland Corner.";
+  "Plug in your Costco spending and find out in seconds whether Gold Star or Executive Membership pays off, with the exact breakeven math, from Kirkland Corner.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -59,7 +72,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${oswald.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-kc-cream text-kc-ink">
+      <head>
+        <script
+          id="matomo-analytics"
+          dangerouslySetInnerHTML={{ __html: MATOMO_SCRIPT }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col bg-kc-bg text-kc-ink">
         <Header />
         {children}
         <Footer />
