@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const NEWSLETTER_URL = "https://kirklandcorner.substack.com";
 const CONTACT_EMAIL = "kirklandcorner00@gmail.com";
+const KOFI_URL = "https://ko-fi.com/kirklandcorner";
 
 export default function Footer() {
   return (
@@ -55,6 +56,14 @@ export default function Footer() {
           <Link href="/terms-of-service" className="hover:text-kc-red hover:underline">
             Terms of Service
           </Link>
+          <a
+            href={KOFI_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-kc-red hover:underline"
+          >
+            ☕ Support this project
+          </a>
         </div>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 import Calculator from "@/components/Calculator";
 import SubstackEmbed from "@/components/SubstackEmbed";
+import BookPick from "@/components/BookPick";
 import { BREAKEVEN_SPEND, EXECUTIVE_PRICE, GOLD_STAR_PRICE, REWARD_CAP_SPEND, UPGRADE_COST, formatCurrency } from "@/lib/calculator";
 
 const faqs = [
@@ -82,6 +83,7 @@ export default function Home() {
         <div className="flex flex-col gap-6">
           <Calculator />
           <SubstackEmbed />
+          <BookPick />
         </div>
       </section>
 

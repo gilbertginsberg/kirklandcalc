@@ -38,11 +38,13 @@ export default function TermsOfServicePage() {
 
       <h2>Third-party services</h2>
       <p>
-        The site embeds a newsletter signup form from Substack and displays
-        ads served by Google AdSense. Your use of those features is also
-        subject to Substack&rsquo;s and Google&rsquo;s own terms and privacy
-        policies. We aren&rsquo;t responsible for the content, availability, or
-        practices of those third-party services.
+        The site embeds a newsletter signup form from Substack, displays ads
+        served by Google AdSense, and includes affiliate links (such as to
+        books on Amazon) that may earn us a commission on qualifying
+        purchases. Your use of those features is also subject to the
+        relevant third party&rsquo;s own terms and privacy policies. We
+        aren&rsquo;t responsible for the content, availability, or practices
+        of those third-party services.
       </p>
 
       <h2>Acceptable use</h2>

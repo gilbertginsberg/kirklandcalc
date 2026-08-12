@@ -63,7 +63,9 @@ export default function PrivacyPolicyPage() {
         >
           How Google uses information from sites that use our services
         </a>
-        .
+        . The site also includes affiliate links (for example, to books on
+        Amazon). If you click one and make a purchase, we may earn a small
+        commission at no extra cost to you.
       </p>
 
       <h2>Cookies</h2>
