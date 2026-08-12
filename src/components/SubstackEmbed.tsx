@@ -7,8 +7,8 @@ export default function SubstackEmbed() {
         Want more Costco math like this?
       </h3>
       <p className="mt-1 text-sm text-kc-ink/70">
-        Get Kirkland Corner in your inbox: deals, hacks, and hot takes on the
-        food court hot dog debate.
+        Get Kirkland Corner in your inbox: deals, hacks, and hot takes on
+        which Kirkland Signature dupes are actually worth the hype.
       </p>
 
       <div className="mt-4 overflow-hidden rounded-lg border border-kc-ink/10 bg-white">

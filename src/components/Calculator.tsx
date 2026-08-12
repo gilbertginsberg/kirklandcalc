@@ -20,6 +20,7 @@ const MEMBERSHIP_OPTIONS: { value: MembershipTier; label: string }[] = [
 ];
 
 const ROTISSERIE_CHICKEN_PRICE = 4.99;
+const NEWSLETTER_URL = "https://kirklandcorner.substack.com";
 
 function buildVerdict(
   recommendedTier: "gold_star" | "executive",
@@ -98,8 +99,8 @@ export default function Calculator() {
 
   const shareText =
     result.recommendedTier === "executive"
-      ? `I just found out Executive Membership would earn me ${formatCurrency(result.netExecutiveGain)} more than it costs. Check your Costco math:`
-      : `I just found out Gold Star is the right call for me. Executive isn't worth the upgrade yet. Check your Costco math:`;
+      ? `I just found out Executive Membership would earn me ${formatCurrency(result.netExecutiveGain)} more than it costs. Check your Costco math, and be sure to sign up for Kirkland Corner: ${NEWSLETTER_URL}`
+      : `I just found out Gold Star is the right call for me. Executive isn't worth the upgrade yet. Check your Costco math, and be sure to sign up for Kirkland Corner: ${NEWSLETTER_URL}`;
 
   return (
     <div className="flex flex-col gap-6">
@@ -223,6 +224,14 @@ export default function Calculator() {
           </p>
         )}
 
+        {buysGas && result.annualGasSavingsLow > 0 && (
+          <p className="mt-3 text-sm text-white/70">
+            ⛽ Filling up there too? That&rsquo;s roughly{" "}
+            {formatCurrency(result.annualGasSavingsLow)}&ndash;{formatCurrency(result.annualGasSavingsHigh)} more
+            a year, on top of the membership math above.*
+          </p>
+        )}
+
         <div className="mt-5 flex flex-wrap gap-3">
           <ShareButton text={shareText} url="https://kirklandcalc.com" />
         </div>
@@ -251,14 +260,6 @@ export default function Calculator() {
                 {formatCurrency(Math.abs(result.netExecutiveGain))}
               </dd>
             </div>
-            {buysGas && (
-              <div className="flex justify-between gap-2 sm:block">
-                <dt className="text-white/60">Est. annual gas savings*</dt>
-                <dd className="font-semibold">
-                  {formatCurrency(result.annualGasSavingsLow)}–{formatCurrency(result.annualGasSavingsHigh)}
-                </dd>
-              </div>
-            )}
             <div className="flex justify-between gap-2 sm:block">
               <dt className="text-white/60">Breakeven spend for Executive</dt>
               <dd className="font-semibold">{formatCurrency(BREAKEVEN_SPEND)}/yr</dd>
@@ -266,10 +267,11 @@ export default function Calculator() {
           </dl>
           {buysGas && (
             <p className="mt-3 text-xs text-white/50">
-              *Estimate only: Costco gas is typically $0.20 to $0.40/gal cheaper
-              than the national average, but this varies by region and week.
-              Gas purchases don&rsquo;t earn the 2% Executive Reward at all,
-              per Costco&rsquo;s official terms.
+              *Gas savings are a rough estimate: Costco gas is typically
+              $0.20 to $0.40/gal cheaper than the national average, but this
+              varies by region and week. It doesn&rsquo;t count toward your
+              2% Executive Reward, so it&rsquo;s separate from the upgrade
+              math above.
             </p>
           )}
           <p className="mt-2 text-xs text-white/50">
