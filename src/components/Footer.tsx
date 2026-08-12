@@ -21,8 +21,8 @@ export default function Footer() {
             Costco.com
           </a>
           . The Executive Reward applies to qualified Costco, Costco.com, and
-          Costco Travel purchases only. Some purchases (including certain gas
-          and services) may be excluded or capped differently, so your actual
+          Costco Travel purchases only. Gas, tobacco, and several other
+          categories don&rsquo;t count toward it at all, so your actual
           reward may vary from this estimate. Gas savings shown here are a
           rough regional estimate, not a guarantee.
         </p>

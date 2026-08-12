@@ -268,8 +268,8 @@ export default function Calculator() {
             <p className="mt-3 text-xs text-white/50">
               *Estimate only: Costco gas is typically $0.20 to $0.40/gal cheaper
               than the national average, but this varies by region and week.
-              Gas may also be excluded or capped differently under the 2%
-              Executive Reward.
+              Gas purchases don&rsquo;t earn the 2% Executive Reward at all,
+              per Costco&rsquo;s official terms.
             </p>
           )}
           <p className="mt-2 text-xs text-white/50">

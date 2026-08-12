@@ -15,14 +15,31 @@ const faqs = [
   },
   {
     question: "How much can you earn back with the Executive Reward?",
-    answer: `The 2% reward is capped at ${formatCurrency(REWARD_CAP_SPEND * 0.02)} per year, which means it maxes out around ${formatCurrency(REWARD_CAP_SPEND)} in qualified annual spending. Spend beyond that doesn't earn additional reward.`,
+    answer: `The 2% reward is capped at ${formatCurrency(REWARD_CAP_SPEND * 0.02)} per year, capping out around ${formatCurrency(REWARD_CAP_SPEND)} in qualified spending. Per Costco's official terms, the reward isn't guaranteed to equal or exceed the $65 you paid to upgrade.`,
   },
   {
-    question: "Does Costco gas count toward the 2% reward?",
+    question: "What purchases don't count toward the 2% reward?",
     answer:
-      "The Executive Reward applies to qualified Costco, Costco.com, and Costco Travel purchases, but gas and certain other purchases may be excluded or capped differently. Don't assume a blanket 2% on every dollar you spend, including at the pump.",
+      "Gas is the big one: Costco gas purchases never earn the 2% reward, no matter your membership tier. Costco's official terms also exclude cigarettes and tobacco, Costco Shop Cards, postage stamps, cellphones and service plans, food court purchases, membership fees themselves, alcohol and prescriptions in some states, and most travel fees like gratuities and trip protection.",
+  },
+  {
+    question: "Whose purchases count toward the reward?",
+    answer:
+      "Only purchases made by the account's Primary Cardholder or Primary Household Cardholder count. Other household or business cardholders on the account don't add to the reward, and purchases made before you upgraded to Executive don't count either.",
+  },
+  {
+    question: "When do you actually receive the Executive Reward?",
+    answer:
+      "It's issued about three months before your renewal date on your Renewal Statement, reflecting what you'd earned up to that point rather than paying out after each purchase. You need to be a current, paid Executive Member at year's end to receive it.",
+  },
+  {
+    question: "What happens if I downgrade or cancel Executive?",
+    answer:
+      "You can get the current year's $65 upgrade fee refunded, but any 2% reward already issued or accrued is subtracted from that refund first, and is forfeited if it's worth more than the refund.",
   },
 ];
+
+const COSTCO_REWARD_TERMS_URL = "https://www.costco.com/f/-/executive-rewards";
 
 export default function Home() {
   const jsonLd = {
@@ -94,15 +111,11 @@ export default function Home() {
             </p>
             <p>
               A few caveats worth keeping in mind: the reward applies to{" "}
-              <em>qualified</em> purchases only, and some categories (including
-              gas in certain cases) may be excluded or capped differently than
-              the standard 2%. It&rsquo;s also worth remembering that the
-              Executive Reward isn&rsquo;t cash in hand right away. It&rsquo;s
-              issued once a year and typically redeemed in-warehouse or applied
-              toward your next renewal. And if you shop with a household card
-              or split purchases across a family, your combined spend (not just
-              your own) is often what determines whether the upgrade pencils
-              out.
+              <em>qualified</em> purchases only. Gas, tobacco, and a handful of
+              other categories don&rsquo;t count toward it at all, and it&rsquo;s
+              paid out once a year on your Renewal Statement rather than as
+              cash at checkout. See the FAQs below for the full rundown of
+              exclusions and how the reward actually gets paid.
             </p>
             <p>
               The calculator above does this math for you automatically,
@@ -115,6 +128,18 @@ export default function Home() {
           <h2 className="mt-10 font-display text-2xl uppercase tracking-wide text-kc-blue">
             Frequently asked questions
           </h2>
+          <p className="mt-1 text-xs text-kc-ink/50">
+            Sourced from{" "}
+            <a
+              href={COSTCO_REWARD_TERMS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-kc-red"
+            >
+              Costco&rsquo;s official Executive Reward terms
+            </a>
+            .
+          </p>
           <div className="mt-4 space-y-5">
             {faqs.map((faq) => (
               <div key={faq.question}>
