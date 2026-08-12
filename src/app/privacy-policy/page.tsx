@@ -98,11 +98,8 @@ export default function PrivacyPolicyPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about this policy can be sent through the{" "}
-        <a href="https://kirklandcorner.substack.com" target="_blank" rel="noopener noreferrer">
-          Kirkland Corner
-        </a>{" "}
-        newsletter.
+        Questions about this policy can be sent to{" "}
+        <a href="mailto:kirklandcorner00@gmail.com">kirklandcorner00@gmail.com</a>.
       </p>
     </LegalPage>
   );

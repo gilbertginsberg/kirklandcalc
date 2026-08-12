@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const NEWSLETTER_URL = "https://kirklandcorner.substack.com";
+const CONTACT_EMAIL = "kirklandcorner00@gmail.com";
 
 export default function Footer() {
   return (
@@ -37,6 +38,15 @@ export default function Footer() {
             Kirkland Corner
           </a>
           .
+        </p>
+        <p className="mt-3">
+          Got feedback or a suggestion?{" "}
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="font-semibold text-kc-red hover:underline"
+          >
+            {CONTACT_EMAIL}
+          </a>
         </p>
         <div className="mt-4 flex gap-4 border-t border-kc-ink/10 pt-4 text-xs">
           <Link href="/privacy-policy" className="hover:text-kc-red hover:underline">

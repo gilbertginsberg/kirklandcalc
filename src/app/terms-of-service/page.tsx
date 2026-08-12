@@ -75,11 +75,8 @@ export default function TermsOfServicePage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about these terms can be sent through the{" "}
-        <a href="https://kirklandcorner.substack.com" target="_blank" rel="noopener noreferrer">
-          Kirkland Corner
-        </a>{" "}
-        newsletter.
+        Questions about these terms can be sent to{" "}
+        <a href="mailto:kirklandcorner00@gmail.com">kirklandcorner00@gmail.com</a>.
       </p>
     </LegalPage>
   );
